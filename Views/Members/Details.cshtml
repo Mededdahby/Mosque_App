@@ -1,0 +1,37 @@
+﻿@model MuslimApp.Models.member
+
+<div>
+    <h4>member</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.memberName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.memberName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.role)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.role)
+        </dd>
+        <p style="color:cadetblue"><i>mosque informations</i></p>
+        <dt class = "col-sm-2">
+            Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mosque.mosqueName)
+        </dd>
+        <dt class="col-sm-2">
+           Location
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.mosque.mosqueLocation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btnbtn-outline-warning" asp-action="Edit" asp-route-id="@Model?.memberID"><i class="bi bi-pincel-square" Edit</a> |
+    <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-backspace"></i>Back to List</a>
+</div>

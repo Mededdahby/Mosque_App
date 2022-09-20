@@ -1,0 +1,89 @@
+html {
+  font-size: 14px;
+  font-display:auto;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    overflow:auto;
+    position:relative;
+
+}
+/*  body {
+        content:"";
+        background-image: url(/Uploaded/background2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 1OOvh;
+        filter: blur(6px);
+        
+    }*/ 
+
+.bg-image {
+    background-image: url(/Uploaded/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1OOvh;
+    width:1OOvh;
+   backdrop-filter : blur(10px);
+    margin:0;
+    padding:0;
+    left:0;
+    right:0;
+    position:absolute;
+    top:93px;
+}
+.bg1-image {
+    background-image: url(/Uploaded/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1OOvh;
+    width: 1OOvh;
+    backdrop-filter: blur(6px);
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 93px;
+}
+.bg1-image {
+    background-image: url(/Uploaded/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1OOvh;
+    width: 1OOvh;
+    backdrop-filter: blur(6px);
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 93px;
+}
+.bg2-image {
+    background-image: url(/Uploaded/background4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1OOvh;
+    width: 1OOvh;
+    backdrop-filter: blur(6px);
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 93px;
+}
+

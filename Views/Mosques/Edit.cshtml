@@ -1,0 +1,48 @@
+﻿@using MuslimApp.Data.Enums
+@model MuslimApp.Models.mosque
+
+<hr />
+<div class="row text-center">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="mosqueId" />
+            <div class="form-group">
+                <label asp-for="mosquePicture" class="control-label"></label>
+                <input asp-for="mosquePicture" class="form-control" />
+                <span asp-validation-for="mosquePicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mosqueName" class="control-label"></label>
+                <input asp-for="mosqueName" class="form-control" />
+                <span asp-validation-for="mosqueName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mosqueLocation" class="control-label"></label>
+                <input asp-for="mosqueLocation" class="form-control" />
+                <span asp-validation-for="mosqueLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mosqueInformation" class="control-label"></label>
+                <textarea asp-for="mosqueInformation" class="form-control" ></textarea>
+                <span asp-validation-for="mosqueInformation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="situation" class="control-label"></label>
+                <select asp-for="situation" class="form-control"  asp-items="Html.GetEnumSelectList<situation>()"></select>
+                <span asp-validation-for="situation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-backspace"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

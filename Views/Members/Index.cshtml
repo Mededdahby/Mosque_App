@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MuslimApp.Models.member>
+@{
+  
+}
+<form class="form-inline my-2 my-lg-0" asp-controller="Members" asp-action="Filter2" style="padding-right: 25px;">
+    <input name="searchString" type="text" class="form-control" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.memberName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
+            </th>
+            <th>
+                Mosque Name
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.memberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.role)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mosque.mosqueName)
+                </td>
+            <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.memberID"><i class="bi bi-pencil-square"></i> Edit</a> |
+                    <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.memberID"><i class="bi bi-eye"></i>Details</a> |
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.memberID"><i class="bi bi-trash"></i>Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@if (User.Identity.IsAuthenticated)
+{
+    <div style=" position:fixed ; right:25px ; bottom:25px ;" class="text-whihte">
+        <a  asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i>Add New
+        </a>
+    </div>
+}

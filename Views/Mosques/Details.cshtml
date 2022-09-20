@@ -1,0 +1,67 @@
+﻿@model MuslimApp.Models.mosque
+
+@{
+    ViewData["Title"] = "Mosque details";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="card mb-12">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header text-white bg-info">
+                        <p class="card-text">
+                            <h5 class="card-title">
+                                @Model.mosqueName
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="@Model.mosquePicture" height="100%"  width="100%" alt="@Model.mosqueName">
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <p class="card-text">  <b>  Location:</b> @Model.mosqueLocation</p>
+                        <p class="card-text">  <b>Situation :</b> @Model.situation</p>
+                        <p class="card-text"><b>Information: </b>@Model.mosqueInformation</p>
+                    </div>
+                </div>
+                  <p class="text-center"><b>Members</b> </p>
+            </div>
+        </div>
+
+      <table class="table">
+          <head>
+                <tr>
+                <th>
+                   <b> Name</b>
+                </th>
+                 <th>
+                 <b> Roles </b>
+                </th>
+                 </tr>
+            </head>
+            <body>
+        @foreach (var item in Model.members)
+        {
+        <tr>
+            <td>
+                   @Html.DisplayFor(modelItem => item.memberName)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.role)
+            </td>
+        </tr>
+        }
+    </body>
+    </div>
+</table>
+         <div class="col-md-12">
+                    <div class="card-footer">
+                        <p class="card-text">
+                            <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-backspace"></i>Back to List</a>
+                        </p>
+                    </div>
+                </div>
+    </div>

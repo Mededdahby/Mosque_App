@@ -1,0 +1,37 @@
+﻿@using MuslimApp.Data.Enums
+@model MuslimApp.Models.member
+
+<h4>member</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10 offset-1 ">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="memberName" class="control-label"></label>
+                <input asp-for="memberName" class="form-control" />
+                <span asp-validation-for="memberName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="role" class="control-label"></label>
+                <select asp-for="role" class="form-control" asp-items="Html.GetEnumSelectList<role>()"></select>
+                <span asp-validation-for="role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mosque " class="control-label"></label>
+                <select asp-for="mosqueId" class ="form-control" asp-items="ViewBag.mosqueId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-backspace"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
